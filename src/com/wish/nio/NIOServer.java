@@ -56,7 +56,7 @@ public class NIOServer {
                 SelectionKey key = iterator.next();
                 //判断SelectionKey中的Channel状态如何，如果是OP_ACCEPT就进入
                 if (key.isAcceptable()) {
-                    //从判断SelectionKey中取出Channel
+                    //从判断SelectionKey中取出Channel`
                     ServerSocketChannel channel = (ServerSocketChannel) key.channel();
                     //拿到对应客户端的Channel
                     SocketChannel clientChannel = channel.accept();
