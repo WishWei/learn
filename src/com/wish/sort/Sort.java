@@ -11,7 +11,7 @@ public class Sort {
 
     public static void main(String[] args) {
         int[] array = {3,1,5,2,6,9,7};
-        quickSortWrap(array);
+        selectSort(array);
         printArray(array);
     }
 
@@ -59,6 +59,11 @@ public class Sort {
 
     /**
      * 快速排序
+     * 以第一个元素作为基准元素，从坑0挖出来。然后先从右边找到第一个比基准元素小的，放到这个坑里
+     * 然后右边出现了一个坑，然后从左开始找到第一个比基准元素大的元素，放到右边这个坑
+     * 重复这个步骤，直到左边和右边的下标相遇
+     *
+     * 以相遇这个下标，划分为两个递归
      * @param array
      * @param leftIndex
      * @param rightIndex
@@ -87,5 +92,24 @@ public class Sort {
         array[baseIndex] = base;
         quickSort(array, originLeft, baseIndex - 1);
         quickSort(array, baseIndex + 1, originRight );
+    }
+
+    /**
+     * 选择排序
+     * @param array
+     */
+    public static void selectSort(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            int min = array[i];
+            int minIndex = i;
+            for (int j = i; j < array.length ; j++) {
+                if(min > array[j]){
+                    min = array[j];
+                    minIndex = j;
+                }
+            }
+            array[minIndex] = array[i];
+            array[i] = min;
+        }
     }
 }
