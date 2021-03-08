@@ -1,5 +1,8 @@
 package com.wish.dynamic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author wish
  * @ClassName MinPath.java
@@ -33,5 +36,6 @@ public class MinPath {
     public static void main(String[] args) {
         int[][] grid = new int[][]{{1,3,1},{1,5,1},{4,2,1}};
         System.out.println(minPathSum(grid));
+        List<String> list = new ArrayList<>();
     }
 }
