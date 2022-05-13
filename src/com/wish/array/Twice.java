@@ -19,9 +19,6 @@ public class Twice {
     public static void main(String[] args) {
         int[] nums = {4,3,2,7,8,2,3,1};
         List<Integer> results = findDuplicates(nums);
-        String a;
-        Character
-        a.substring()
         System.out.println(results);
     }
 
